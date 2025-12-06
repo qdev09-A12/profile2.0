@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="start.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+  </head>
+  <body>
+    <video autoplay loop muted playsinline id="bg-video">
+      <source src="bgr.mp4" type="video/mp4" />
+    </video>
+    <main>
+      <div class="khung">
+        <img src="undefined - Imgur.jpg" alt="khung" />
+      </div>
+      <div class="avt">
+        <img src="bgradm.png" alt="avt" />
+      </div>
+      <div class="name">
+        <h1 class="color">
+          Nguyễn Minh Quân
+          <img
+            class="color tick"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/512px-Twitter_Verified_Badge.svg.png"
+            alt="tick"
+          />
+        </h1>
+      </div>
+    </main>
+    <script>
+      document.addEventListener(
+        "contextmenu",
+        function (e) {
+          e.preventDefault();
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

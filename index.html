@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Chủ</title>
+  </head>
+  <body>
+    <header>
+      <div class="admin">
+        <img class="khung" src="undefined - Imgur.jpg" alt="khung" />
+        <img
+          class="avatar"
+          src="bgradm.png"
+          alt="admin"
+          style="mix-blend-mode: screen"
+        />
+      </div>
+      <div class="text">
+        <span 
+          >Name: <strong>Nguyễn Minh Quân</strong></span
+        ><br /><br />
+        <span>Birth Day: <strong>11/11/2009</strong></span
+        ><br /><br />
+        <span>Map: <strong>Ninh Bình , Vĩnh Trụ</strong></span
+        ><br /><br />
+        <span>Interest: <strong>Learn</strong></span>
+      </div>
+      <div class="text_run">
+        <span id="typing-text"></span>
+        <span class="cursor"></span>
+      </div>
+    </header>
+    <main>
+      <div class="boss">
+        <div class="content">
+          <div class="hello">
+            <h2>Hello,<span>&nbspI'am Quan:D</span></h2>
+          </div>
+          <table>
+            <tr class="hang1">
+              <th>
+                <a href="#about"
+                  ><img src="about.png" alt="alt" width="70px"
+                /></a>
+              </th>
+              <td>
+                <a href="#"><img src="skill.png" alt="alt" width="80px" /></a>
+              </td>
+              <td>
+                <a href="#"><img src="lien_he.png" alt="alt" width="75px" /></a>
+              </td>
+            </tr>
+            <tr>
+              <th>About</th>
+              <th class="text_content">Skill</th>
+              <th class="text_content">Contact</th>
+            </tr>
+
+            <tr class="hang2">
+              <th>
+                <a href="#"><img src="bot_web.png" alt="alt" width="65px" /></a>
+              </th>
+              <td>
+                <a href="#"
+                  ><img src="bot_tele.png" alt="alt" width="75px"
+                /></a>
+              </td>
+              <td>
+                <a href="#"
+                  ><img src="code_web.png" alt="alt" width="75px"
+                /></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Bot Web</th>
+              <th class="text_content">Bot Tele</th>
+              <th class="text_content">Code Web</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <div id="about" class="about">
+      <h2 style="margin-top: 40px; text-align: center">
+        <strong>A</strong><span class="h2_phu">bout</span>
+      </h2>
+      <div class="name_about">
+        <span>Full Name: Nguyễn Minh Quân</span><br /><br />
+        <span>Birth: 11/11/2009</span><br /><br />
+        <span>Vietnam / Ninh Binh</span>
+      </div>
+      <div class="gioithieu_about">
+        <div class="content_gioithieu">
+          <p>
+            I am a creative and user interface designer from Ninh Binh, Vietnam,
+            working in the field of website development. I like to turn complex
+            problems into simple, beautiful designs, optimizing user interfaces.
+            I like to be creative, solving difficult problems with the knowledge
+            I have learned.
+          </p>
+        </div>
+        <div class="diem_manh">
+          <i class="fa-regular fa-circle-dot fa-beat"></i>&nbsp; &nbsp;<span
+            >Good Computer Science Students.</span
+          ><br /><br />
+          <i class="fa-regular fa-circle-dot fa-beat"></i>&nbsp; &nbsp;<span
+            >Vice President Of AI And Robot Club.</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="picture">
+      <img id="img1" src="chan_dung1.jpg" alt="picture1" width="320px" height="260px">
+      <img id="img2" src="chan_dung2.jpg" alt="picture2" width="330px" height="260px">
+    </div>
+    <div class="note">
+      ... <br>
+      Cạn Ý Tưởng Roiii!!!
+    </div>
+    <div id="introOverlay">
+      <iframe src="start.html" frameborder="0"></iframe>
+    </div>
+
+    <script>
+      const texts = [
+        "Nguyen Minh Quan",
+        "THPT Ly Nhan",
+        "Class A12",
+        "Qdev09@gmail.com",
+      ];
+      let index = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let speed = 50;
+
+      function typeEffect() {
+        const currentText = texts[index];
+        const display = document.getElementById("typing-text");
+
+        if (!isDeleting) {
+          display.textContent = currentText.substring(0, charIndex + 1);
+          charIndex++;
+
+          if (charIndex === currentText.length) {
+            isDeleting = true;
+            speed = 40;
+            setTimeout(typeEffect, 1000);
+            return;
+          }
+        } else {
+          display.textContent = currentText.substring(0, charIndex - 1);
+          charIndex--;
+
+          if (charIndex === 0) {
+            isDeleting = false;
+            index = (index + 1) % texts.length;
+            speed = 120;
+          }
+        }
+        setTimeout(typeEffect, speed);
+      }
+      typeEffect();
+    </script>
+    <script>
+      function doiAnh() {
+        document.getElementById("main_img").src = "phong_thu.png";
+      }
+    </script>
+    <script>
+      document.getElementById("introOverlay").addEventListener("click", () => {
+        document.getElementById("introOverlay").classList.add("fade-out");
+
+        setTimeout(() => {
+          document.getElementById("introOverlay").remove();
+        }, 2000);
+      });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
