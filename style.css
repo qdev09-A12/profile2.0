@@ -188,10 +188,15 @@ td {
 .hello span {
   color: #0ff;
 }
-table img:hover {
-  filter: drop-shadow(1px 1px 5px cyan);
+table .khd:hover {
+  filter: drop-shadow(1px 1px 5px red);
 }
-
+#hoatdong:hover{
+  filter: drop-shadow(1px 1px 5px cyan) !important;
+}
+#hoatdong1:hover{
+  filter: drop-shadow(1px 1px 5px cyan) !important;
+}
 /* =========ABOUT========== */
 .about {
   width: 70%;
@@ -340,4 +345,7 @@ table img:hover {
   color: white;
   text-align: center;
   margin-top: 1700px;
+}
+#hoatdong:hover{
+
 }
